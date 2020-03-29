@@ -67,4 +67,29 @@ attr_accessor :title, :price
 
   end
 
+  def Films.find_by_name(name)
+
+  db = PG.connect ({ dbname: 'cinema', host: 'localhost'})
+
+  sql = "SELECT * FROM cinema WHERE title = $1"
+
+  values = [name]
+
+  db.prepare("find_by_name", sql)
+
+  results = db.exec_prepared("find_by_name", values)
+
+  db.close
+
+  return nil if results.first() == nil
+
+  film_hash = results[0]
+
+  found_film = Films.new(film_hash)
+
+  return found_film
+
+end
+
+
 end

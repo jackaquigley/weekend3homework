@@ -17,7 +17,7 @@ movie1.save
 
 movie2.save
 
-Films.films_playing
+Films.find_by_name('The Invisible Man')
 
 binding.pry
 nil
