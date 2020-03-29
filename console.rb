@@ -18,7 +18,7 @@ customer1 = Customer.new ({
   'cash' => 10
   })
 
-customer1.save
+Customer.delete_all
 
 binding.pry
 nil
