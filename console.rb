@@ -12,7 +12,8 @@ movie2 = Films.new ({
   'price' => 10
   })
 
-movie1.save
+
+Films.delete_all
 
 binding.pry
 nil
