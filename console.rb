@@ -1,6 +1,7 @@
 require ('pry-byebug')
 
 require_relative('models/cinema.rb')
+require_relative('models/customers.rb')
 
 movie1 = Films.new ({
   'title' => 'Onward',
@@ -12,12 +13,12 @@ movie2 = Films.new ({
   'price' => 10
   })
 
+customer1 = Customer.new ({
+  'name' => 'Jack',
+  'cash' => 10
+  })
 
-movie1.save
-
-movie2.save
-
-Films.find_by_name('The Invisible Man')
+customer1.save
 
 binding.pry
 nil
