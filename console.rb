@@ -13,7 +13,11 @@ movie2 = Films.new ({
   })
 
 
-Films.delete_all
+movie1.save
+
+movie2.save
+
+Films.films_playing
 
 binding.pry
 nil

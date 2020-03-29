@@ -49,4 +49,22 @@ attr_accessor :title, :price
 
   end
 
+  def Films.films_playing()
+
+    db = PG.connect ({ dbname: 'cinema', host: 'localhost'})
+
+    sql = "SELECT * FROM cinema"
+
+    db.prepare("films_list", sql)
+
+    results = db.exec_prepared("films_list")
+
+    db.close
+
+    movie_list = results.map {|movie| Films.new(movie)}
+
+    return movie_list
+
+  end
+
 end
